@@ -40,20 +40,4 @@ router.delete(
 router.param("userId", userById);
 router.param("productId", productById);
 
-// router.post("/product/create/:userId", requireSignin, isAdmin, create);
-// router.get("/product/:productId", read);
-// router.post("/product/create/:userId", requireSignin, isAuth, isAdmin, create);
-// router.delete("/product/:productId/:userId", requireSignin, isAdmin, remove);
-// router.put("/product/:productId/:userId", requireSignin, isAdmin, update);
-
-// router.get("/products", list);
-// router.get("/products/search", listSearch);
-// router.get("/products/categories", categoryList);
-// // router.get("/products/categories", categoryList2);
-
-// router.get("/products/relatedproducts/:productId", relatedProducts);
-// router.get("/products/catogories", categoryList);
-// router.post("/products/by/search", listBySearch);
-// router.get("/product/photo/:productId", productPhoto);
-
 module.exports = router;

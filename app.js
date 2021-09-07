@@ -29,11 +29,12 @@ app.use(expressValidator());
 
 const AuthorizationRoute = require("./Routes/Authorization");
 const ProductRoute = require("./Routes/Product");
+const WarehouseRoute = require("./Routes/Warehouse");
 
 //Routes
 app.use("/api", AuthorizationRoute);
 app.use("/api", ProductRoute);
-
+app.use("/api", WarehouseRoute);
 //Port
 
 port = process.env.PORT || 8000;

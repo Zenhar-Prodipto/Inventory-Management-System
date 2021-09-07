@@ -53,32 +53,6 @@ exports.readProduct = (req, res) => {
   return res.json(req.product);
 };
 
-// exports.updateProduct = (req, res) => {
-//   Product.findByIdAndUpdate(
-//     { _id: req.params._id },
-//     {
-//       name: req.body.name,
-//       description: req.body.description,
-//       sellingPrice: req.body.sellingPrice,
-//       inventory: req.body.inventory,
-//     },
-//     { new: true },
-//     (err, update) => {
-//       if (err) {
-//         return res.status(400).json({
-//           "error Message": "Error Updating Product",
-//           error: err,
-//         });
-//       }
-
-//       return res.json({
-//         update,
-//         massage: "Successfully Updated",
-//       });
-//     }
-//   );
-// };
-
 exports.updateProduct = (req, res) => {
   let product = req.product;
   product.name = req.body.name;
