@@ -73,3 +73,13 @@ exports.requireSignin = expressJwt({
   algorithms: ["HS256"],
   userProperty: "auth",
 });
+
+exports.isAdmin = (req, res, next) => {
+  //deny access if the user is a customer
+  if (req.profile.role === 0) {
+    return res.status(403).json({
+      error: "Admin resource! Access Denied!",
+    });
+  }
+  next();
+};
