@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-//Imports from Authorization Controller
+//Imports from Authorization Controllers
 const {
   requireSignin,
   isAdmin,
