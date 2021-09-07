@@ -8,12 +8,12 @@ REST API for managing inventory of an ecommerce site using Node(Express) and Mon
 
 # Features
 
--Authentication of users with admin privileges
--Listing Products
--Products filtered By Area
--Customers can checkout items
--Update the inventory after customer checkout
--Re-stocking inventory and marking Products when stocked out”
+- Authentication of users with admin privileges
+- Listing Products
+- Products filtered By Area
+- Customers can checkout items
+- Update the inventory after customer checkout
+- Re-stocking inventory and marking Products when stocked out”
 
 # Tools
 
