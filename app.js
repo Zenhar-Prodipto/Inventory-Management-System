@@ -28,9 +28,11 @@ app.use(expressValidator());
 //Importing Routes
 
 const AuthorizationRoute = require("./Routes/Authorization");
+const ProductRoute = require("./Routes/Product");
 
 //Routes
 app.use("/api", AuthorizationRoute);
+app.use("/api", ProductRoute);
 
 //Port
 

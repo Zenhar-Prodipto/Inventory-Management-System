@@ -83,3 +83,23 @@ exports.isAdmin = (req, res, next) => {
   }
   next();
 };
+
+exports.userById = (req, res, next, id) => {
+  User.findById(id).exec((err, user) => {
+    if (err || !user) {
+      return res.status(400).json({
+        error: "User Not Found",
+      });
+    }
+
+    req.profile = user;
+    next();
+  });
+};
+
+exports.readUsers = (req, res) => {
+  req.profile.hashed_password = undefined; //this will not be sent
+  req.profile.salt = undefined; // this will not be sent
+
+  return res.json(req.profile);
+};
