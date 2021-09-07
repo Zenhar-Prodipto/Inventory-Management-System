@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken"); // to generate signed token
 const expressJwt = require("express-jwt"); // For Authorization Check
-const User = require("../models/Users");
+const User = require("../Models/Users");
 
 exports.signup = (req, res) => {
   //Validation
