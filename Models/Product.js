@@ -21,6 +21,13 @@ const productSchema = new mongoose.Schema(
       maxlength: 32,
     },
 
+    sourcingPrice: {
+      type: Number,
+      trim: true,
+      required: true,
+      maxlength: 32,
+    },
+
     inventory: {
       type: Number,
       default: 1,

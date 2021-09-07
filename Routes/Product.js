@@ -16,8 +16,14 @@ const {
   readProduct,
   updateProduct,
   removeProduct,
+  filterProducts,
+  restockingInventory,
+  stockedOut,
   productById,
+  checkout,
 } = require("../Controllers/Product");
+
+const { warehouseById } = require("../Controllers/Warehouse");
 
 router.get("/products", productList);
 router.post("/product/create/:userId", requireSignin, isAdmin, createProduct);
@@ -37,7 +43,13 @@ router.delete(
   removeProduct
 );
 
+router.get("/filter/by/area/", filterProducts);
+router.get("/products/restocking", requireSignin, restockingInventory);
+router.get("/products/stockedOut", requireSignin, stockedOut);
+router.post("/products/checkout", requireSignin, checkout);
+
 router.param("userId", userById);
 router.param("productId", productById);
+router.param("warehouseId", warehouseById);
 
 module.exports = router;

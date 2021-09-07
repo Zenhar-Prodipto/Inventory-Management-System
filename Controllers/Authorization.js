@@ -74,16 +74,6 @@ exports.requireSignin = expressJwt({
   userProperty: "auth",
 });
 
-exports.isAdmin = (req, res, next) => {
-  //deny access if the user is a customer
-  if (req.profile.role === 0) {
-    return res.status(403).json({
-      error: "Admin resource! Access Denied!",
-    });
-  }
-  next();
-};
-
 exports.userById = (req, res, next, id) => {
   User.findById(id).exec((err, user) => {
     if (err || !user) {
@@ -95,6 +85,16 @@ exports.userById = (req, res, next, id) => {
     req.profile = user;
     next();
   });
+};
+
+exports.isAdmin = (req, res, next) => {
+  //deny access if the user is a customer
+  if (req.profile.role === 0) {
+    return res.status(403).json({
+      error: "Admin resource! Access Denied!",
+    });
+  }
+  next();
 };
 
 exports.readUsers = (req, res) => {
