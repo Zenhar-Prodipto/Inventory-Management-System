@@ -37,7 +37,7 @@ app.use("/api", ProductRoute);
 app.use("/api", WarehouseRoute);
 //Port
 
-port = process.env.PORT || 8000;
+const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
   console.log(`The app is running at port ${port}`);
