@@ -22,4 +22,4 @@ REST API for managing inventory of an ecommerce site using Node(Express) and Mon
 
 # How to Run Locally
 
-npm start
+node app.js
